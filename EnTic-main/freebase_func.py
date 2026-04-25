@@ -716,7 +716,7 @@ def apply_pseudo_state_refinement(all_experiences, preference_pairs, args):
 
 
 def evaluate_path(state, question, args, model_st, path_evaluator=None, all_experiences=None, state_vec=None, all_paths=None):
-    # Canonical path evaluator for the DAMR-aligned PoG pipeline.
+    # Canonical path evaluator for the DAMR-aligned EnTic-main pipeline.
     path = state.get('path')
     subtask = state.get('subtask')
 

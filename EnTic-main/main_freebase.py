@@ -108,7 +108,7 @@ class Critic(nn.Module):
 class PPOAgent:
     def __init__(self, args):
         print("Initializing PPO Agent...")
-        self.metrics_path = "/root/autodl-fs/PoG-main/Results/ppo_metrics.jsonl"
+        self.metrics_path = "/root/autodl-fs/EnTic-main-main/Results/ppo_metrics.jsonl"
         self.global_update_step = 0
         self.args = args 
         self.action_dim = args.beam_width 
@@ -327,7 +327,7 @@ def main():
     
     # 数据集和路径参数
     parser.add_argument("--dataset", type=str, default="cwq", choices=["cwq", "webqsp", "grailqa"], help="Choose the dataset.")
-    parser.add_argument("--results_dir", type=str, default="/root/autodl-fs/PoG-main/Results", help="Directory to save results.")
+    parser.add_argument("--results_dir", type=str, default="/root/autodl-fs/EnTic-main-main/Results", help="Directory to save results.")
     parser.add_argument("--model_path", type=str, default='/root/huggingface/models--sentence-transformers--msmarco-distilbert-base-tas-b/snapshots/b12d9352e776979147078a8975a4885042984fd1/', help="Path to Sentence Transformer model.")
     
     # LLM 配置参数
@@ -375,10 +375,10 @@ def main():
     #ppo评估
     # --- 新增：度量记录 ---
     parser.add_argument("--metrics_path", type=str,
-                        default="/root/autodl-fs/PoG-main/Results/ppo_metrics.jsonl",
+                        default="/root/autodl-fs/EnTic-main-main/Results/ppo_metrics.jsonl",
                         help="Where to append PPO training metrics (JSONL).")
     parser.add_argument("--metrics_eval_path", type=str,
-                        default="/root/autodl-fs/PoG-main/Results/ppo_eval_metrics.jsonl",
+                        default="/root/autodl-fs/EnTic-main-main/Results/ppo_eval_metrics.jsonl",
                         help="Where to append per-question eval metrics (JSONL).")
 
     # 添加回溯推理相关参数

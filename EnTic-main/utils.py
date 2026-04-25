@@ -1090,7 +1090,7 @@ def run_llm(prompt, temperature, max_tokens, openai_api_keys, engine="gpt-4.1", 
 
 
 def convert_state_to_ppo_input(state_dict, args, model_st):
-    # Canonical PPO state featurizer used by the current PoG search loop.
+    # Canonical PPO state featurizer used by the current EnTic-main search loop.
     global model
     if model_st is None:
         model_st = model
@@ -1174,7 +1174,7 @@ def convert_state_to_ppo_input(state_dict, args, model_st):
 
 
 def should_terminate(question, current_path, current_state, observation, args):
-    # Canonical termination helper used by PoG/freebase_func.py.
+    # Canonical termination helper used by EnTic-main/freebase_func.py.
     if not current_path or not observation:
         return (False, "Need more exploration to answer the question.")
 
